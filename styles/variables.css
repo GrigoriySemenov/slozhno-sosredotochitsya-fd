@@ -2,3 +2,15 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --background-image: url('../images/cover-image-dark.png');
+  --background-color: #000028;
+  --accent-text-color: #000028;
+  --element-color: #FF0070;
+  --accent-color: #FF0070;
+  --title-color: #DB00FF;
+  --text-color: #fff;
+  --link-color: #F1B2CE;
+  --display: block;
+}
