@@ -141,7 +141,7 @@
 }
 
 .title-decor {
-  color: var(--element-color);
+  color: var(--accent-text-color);
   background-color: var(--accent-color);
 }
 
