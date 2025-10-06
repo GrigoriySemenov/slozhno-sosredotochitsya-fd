@@ -21,29 +21,28 @@
   margin-block-end: 40px;
 }
 
-.header::before,
-.header::after {
-  display: var(--display);
+.decorated-zone::before,
+.decorated-zone::after {
   content: "";
+  color: transparent;
   position: absolute;
   width: 25px;
   height: 25px;
-  border: 1px solid var(--accent-color);
-  z-index: 1;
+  border: none;
 }
 
-.header::before {
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
-  border-right: none;
-  border-top: none;
+.decorated-zone::before {
+  bottom: 10px;
+  left: 10px;
+  border-left: 1px solid var(--element-color);
+  border-bottom: 1px solid var(--element-color);
 }
 
-.header::after {
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
-  border-inline-start: none;
-  border-block-end: none;
+.decorated-zone::after {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid var(--element-color);
+  border-right: 1px solid var(--element-color);
 }
 
 .header__theme-menu {
@@ -136,7 +135,7 @@
   align-self: center;
   justify-self: left;
   width: 355px;
-  height: 117px;
+  
   margin-inline-start: 10px;
   margin-block-start: -25px;
 }
@@ -235,31 +234,6 @@
   justify-content: center;
 }
 
-.footer::before,
-.footer::after {
-  display: var(--display);
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border: 1px solid var(--accent-color);
-  z-index: 1;
-}
-
-.footer::before {
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
-  border-right: none;
-  border-top: none;
-}
-
-.footer::after {
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
-  border-inline-start: none;
-  border-block-end: none;
-}
-
 .footer__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
@@ -268,21 +242,11 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-@media (768px <=width < 1024px) {
+@media (min-width: 768px)  {
   .header {
-    height: 100vh;
     min-height: 1024px;
   }
 
-  .header::before {
-    inset-block-end: 20px;
-    inset-inline-start: 20px;
-  }
-
-  .header::after {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
-  }
 
   .header__right-top-text {
     inset-inline-end: 48px;
@@ -297,7 +261,6 @@
 
   .header__theme-menu-list {
     align-self: end;
-    justify-self: end;
     gap: 10px;
     margin-block-end: -110px;
     margin-inline-end: 20px;
@@ -313,8 +276,6 @@
 
   .content-section {
     grid-template-columns: minmax(min-content, 236px) 1fr;
-    gap: 20px;
-    margin-block-end: 30px;
     margin-block-start: 60px;
     margin-inline: 10px;
   }
@@ -326,8 +287,8 @@
   }
 
   .article__card {
-    display: block;
-    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    display: grid;
+    grid-template-columns: 1fr;
     grid-column: 1 / 3;
   }
 
@@ -350,7 +311,6 @@
 
   .gallery-image {
     overflow: hidden;
-    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -378,40 +338,28 @@
   }
 
   .footer {
-    height: 100vh;
     min-height: 1024px;
-  }
-
-  .footer::before {
-    inset-block-end: 0px;
-    inset-inline-start: 10px;
-  }
-
-  .footer::after {
-    inset-block-start: 40px;
-    inset-inline-end: 10px;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-block-start: 50px;
   }
+
+  .decorated-zone::before {
+    bottom: 20px;
+    left: 20px;
+}
+
+  .decorated-zone::after {
+    top: 20px;
+    right: 20px;
+  }
 }
 
 @media (min-width: 1024px) {
   .header {
-    height: 100vh;
     min-height: 768px;
-  }
-
-  .header::before {
-    inset-block-end: 20px;
-    inset-inline-start: 20px;
-  }
-
-  .header::after {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
   }
 
   .header__right-top-text {
@@ -435,7 +383,6 @@
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
-    gap: 10px;
   }
 
   .content-section {
@@ -451,8 +398,6 @@
   }
 
   .section__card {
-    display: grid;
-    grid-template-rows: auto-fit 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
@@ -477,7 +422,6 @@
     align-self: start;
     justify-self: end;
     width: 491px;
-    height: 71px;
     margin-inline-end: 20px;
     margin-block-start: 51px;
   }
@@ -532,7 +476,6 @@
   }
 
   .footer {
-    height: 100vh;
     min-height: 768px;
     margin-block-end: 0px;
     padding-block-start: 20px;
@@ -544,13 +487,13 @@
     padding-block-start: 20px;
   }
 
-  .footer::before {
-    inset-block-end: 0px;
-    inset-inline-start: 10px;
+    .decorated-zone::before {
+    bottom: 20px;
+    left: 20px;
   }
 
-  .footer::after {
-    inset-block-start: 40px;
-    inset-inline-end: 10px;
+  .decorated-zone::after {
+    top: 20px;
+    right: 20px;
   }
 }
