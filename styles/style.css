@@ -294,17 +294,16 @@
     grid-column: 1 / 3;
   }
 
-  .section__title-list {
-    margin-inline-end: 0;
-    margin-inline-start: 8px;
+  .section__block-title-gallery {
+    margin-inline-start: 10px;
   }
 
   .section__gallery {
-    gap: 10px;
+    display: block;
   }
 
   .gallery {
-    margin-block-start: 20px;
+    margin-block-start: 30px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto min-content;
     grid-auto-flow: dense;
