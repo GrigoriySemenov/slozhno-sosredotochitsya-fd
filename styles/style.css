@@ -261,7 +261,7 @@
   .header__theme-menu-list {
     align-self: end;
     gap: 10px;
-    margin-block-end: -110px;
+    margin-block-end: -115px;
     margin-inline-end: 20px;
   }
 
@@ -337,11 +337,13 @@
 
   .footer {
     min-height: 1024px;
+    margin-block-start: 60px;
+    padding-block-end: 60px;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-block-start: 50px;
+    margin-block-start: 60px;
   }
 
   .decorated-zone::before {
@@ -370,6 +372,7 @@
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
+    margin-inline-end: 0;
   }
 
   .content-section {
@@ -424,12 +427,9 @@
 
   .footer {
     min-height: 768px;
-    margin-block-end: 0px;
-    padding-block-start: 20px;
   }
 
   .footer__title {
     margin-block-end: 0px;
-    padding-block-start: 20px;
   }
 }
