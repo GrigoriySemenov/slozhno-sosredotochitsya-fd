@@ -420,14 +420,6 @@
     margin-inline-start: 5px;
   }
 
-  .section__block-title-gallery {
-    margin-inline-start: 10px;
-  }
-
-  .section__gallery {
-    display: block;
-  }
-
   .footer {
     min-height: 768px;
   }
